@@ -215,5 +215,6 @@ bindsym --release Print exec escrotum 'sc_%Y-%m-%d-%H%M%S_$wx$h.png'
 bindsym --release Shift+Print exec escrotum -s 'sc_%Y-%m-%d-%H%M%S_$wx$h.png'
 
 # START UP
+exec_always --no-startup-id picom
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id slack -u

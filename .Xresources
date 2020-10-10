@@ -5,7 +5,6 @@ rofi.color-active: #2f343f, #b48ead, #2f343f, #2f343f, #93e5cc
 rofi.color-urgent: #2f343f, #ebcb8b, #2f343f, #2f343f, #ebcb8b
 
 URxvt.font: xft:Roboto Mono for Powerline:size=10
-!URxvt.scrollBar: false
 
 !! Colorscheme
 
