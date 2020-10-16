@@ -16,7 +16,7 @@ editor: nvim / vscode
 ```
 
 NOTE:
-> If you're installing arch, please follow the [official guide](https://wiki.archlinux.org/index.php/Installation_guide) instead
+> If you're installing arch, please follow the [official guide](https://wiki.archlinux.org/index.php/Installation_guide) instead.
 
 // --- Preparation
 1. Download [Arch ISO](https://www.archlinux.org/download/) & [Balena Etcher](https://www.balena.io/etcher/)<br/>
