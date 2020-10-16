@@ -99,33 +99,33 @@ Installation depends on your hardware and personal preferences.
 * AUR packages
 > tts-fs-fonts google-chrome visual-studio-code-bin neovim-nightly viber slack-desktop  escrotum-git 4kvideodownloader 4kyoutubetomp3 zoom
 
-// ===[ XINITRC ]=== //<br/>
+// --- xinitrc
 ```
 xrdb -merge ~/.Xresources<br/>
 exec i3<br/>
 ```
 
-// ===[ zprofile ]=== //<br/>
+// --- zprofile
 ```
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
 fi
 ```
 
-// ===[ SHELL ]=== //
-1. Change shell to zsh `> chsh -s $(which zsh)`
+// --- shell
+1. change shell to zsh `> chsh -s $(which zsh)`
 
-2. Get Oh-My-Zsh<br/>
+2. get Oh-My-Zsh<br/>
 `> sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
-3. Plugins<br/>
+3. plugins<br/>
 ```
->nvim ~/.zshrc
->ZSH_THEME="agnoster"
->git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
->git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
->git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+> git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+> git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+> git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
+
+4. theme [agnoster](https://github.com/agnoster/agnoster-zsh-theme)
 
 // ===[ MY DOT FILES ]=== //
 https://github.com/codekcv/dotfiles
