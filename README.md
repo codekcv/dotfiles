@@ -1,28 +1,29 @@
-﻿This is a personal guide for my own arch install for my reference only. Installation depends on your hardware and personal preferences.
+This is a personal guide for my own arch install for my reference only.<br/>
+Installation depends on your hardware and personal preferences.
 
-// ===[ Preparation ]=== //
-1. Download Arch ISO & Balena Etcher
+// --- Preparation
+1. Download [Arch ISO](https://www.archlinux.org/download/) & [Balena Etcher](https://www.balena.io/etcher/)<br/>
 2. Flash to drive and boot to UEFI
 
-// ===[ Installation ]=== //
-1. Check stuff
-1.1 internet >'ping -c3 google.com'
-1.2 UEFI >ls /sys/firmware/efi/efivars
-1.3 disk >fdisk -l
+// --- Installation
+1. check stuff<br/>
+1.1 internet > `ping -c3 google.com'`<br/>
+1.2 isUEFI? > `ls /sys/firmware/efi/efivars`<br/>
+1.3 disk > `fdisk -l`
 
-2. >timedatectl set-ntp true
+2. update sys clock > `timedatectl set-ntp true`
 
-5. Wipe
-5.1 gdisk /dev/sd*
+5. wipe drive and create partitions<br/>
+5.1 > `gdisk /dev/sd*`<br/>
 5.2 o -> n -> defx2, +512MB, ef00 -> n -> defx3 -> w
 
-6. Format
+6. format partition
 6.1 mkfs.fat /dev/sd*1
 6.2 mkfs.ext4 /dev/sd*2
 
-7. Mount
-7.1 mount /dev/sd*2 /mnt
-7.2 mkdir /mnt/boot/efi
+7. Mount<br/>
+7.1 mount /dev/sd*2 /mnt<br/>
+7.2 mkdir /mnt/boot/efi<br/>
 7.3 mount /dev/sd*1 /mnt/boot/efi
 
 // ===[ INIT PACKAGES ]=== //
