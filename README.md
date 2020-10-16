@@ -1,5 +1,6 @@
 This is a personal guide for my own arch install for my reference only.<br/>
-Installation depends on your hardware and personal preferences.
+Installation depends on your hardware and personal preferences.<br/>
+You may use my dotfiles and configs if you want.
 
 // --- Preparation
 1. Download [Arch ISO](https://www.archlinux.org/download/) & [Balena Etcher](https://www.balena.io/etcher/)<br/>
