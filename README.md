@@ -146,6 +146,14 @@ fi
 
 4. theme [agnoster](https://github.com/agnoster/agnoster-zsh-theme)
 
-// ===[ MY DOT FILES ]=== //
+// --- multilib<br/>
+1. `> sudo nvim /etc/pacman.conf`<br/>
+3. enable
+```
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+3. sys upgrade `> sudo pacman -Syu`
 
+// ===[ MY DOT FILES ]=== // <br/>
 https://github.com/codekcv/dotfiles
