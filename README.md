@@ -6,13 +6,14 @@ You may use my dotfiles and configs if you want.
 ```
 os: arch linux
 shell: zsh
-terminal: alacritty (previously urxvt)
-wm: i3-gaps (planning to go bspwm)
-switcher: rofi (previously d-menu)
-bar: polybar (previously i3bar/i3status)
+terminal: alacritty // previously urxvt
+wm: i3-gaps // planning to go bspwm
+switcher: rofi // previously d-menu
+bar: polybar // previously i3bar/i3status
 compositor: picom
 display server: xorg
-editor: nvim / vscode
+editor: nvim enabled vscode
+cli editor: nvim
 ```
 
 NOTE:
