@@ -15,11 +15,14 @@ display server: xorg
 editor: nvim / vscode
 ```
 
+NOTE:
+> If you're installing arch, please follow the [official guide](https://wiki.archlinux.org/index.php/Installation_guide) instead
+
 // --- Preparation
 1. Download [Arch ISO](https://www.archlinux.org/download/) & [Balena Etcher](https://www.balena.io/etcher/)<br/>
 2. Flash to drive and boot to UEFI
 
-// --- Installation
+// --- Installation 
 1. check stuff<br/>
 1.1 internet `> ping -c3 google.com'`<br/>
 1.2 isUEFI? `> ls /sys/firmware/efi/efivars`<br/>
