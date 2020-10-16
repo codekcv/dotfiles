@@ -2,6 +2,19 @@ This is a personal guide for my own arch install for my reference only.<br/>
 Installation depends on your hardware and personal preferences.<br/>
 You may use my dotfiles and configs if you want.
 
+## setup
+```
+os: arch linux
+shell: zsh
+terminal: alacritty
+wm: i3-gaps (planning to go bspwm)
+switcher: rofi
+bar: polybar
+compositor: picom
+display server: xorg
+editor: nvim / vscode
+```
+
 // --- Preparation
 1. Download [Arch ISO](https://www.archlinux.org/download/) & [Balena Etcher](https://www.balena.io/etcher/)<br/>
 2. Flash to drive and boot to UEFI
