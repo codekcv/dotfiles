@@ -24,7 +24,7 @@ NOTE:
 
 // --- Installation 
 1. check stuff<br/>
-1.1 internet `> ping -c3 google.com'`<br/>
+1.1 internet `> ping -c3 archlinux.org`<br/>
 1.2 isUEFI? `> ls /sys/firmware/efi/efivars`<br/>
 1.3 disk `> fdisk -l`
 
@@ -35,13 +35,15 @@ NOTE:
 3.2 o -> n -> defx2, +512MB, ef00 -> n -> defx3 -> w
 
 4. format partition<br/>
-4.1 `> mkfs.fat /dev/sd*1`<br/>
-4.2 `> mkfs.ext4 /dev/sd*2`
+4.1 boot `> mkfs.fat /dev/sd*1`<br/>
+4.2 system `> mkfs.ext4 /dev/sd*2`
 
 5. Mount<br/>
-5.1 `> mount /dev/sd*2 /mnt`<br/>
-5.2 `> mkdir /mnt/boot/efi`<br/>
-5.3 `> mount /dev/sd*1 /mnt/boot/efi`
+```
+> mount /dev/sd*2 /mnt // system 1st
+> mkdir /mnt/boot/efi
+> mount /dev/sd*1 /mnt/boot/efi
+```
 
 // --- Init Packages<br/>
 `> pacstrap /mnt ...`
@@ -118,8 +120,8 @@ NOTE:
 
 // --- xinitrc
 ```
-xrdb -merge ~/.Xresources<br/>
-exec i3<br/>
+xrdb -merge ~/.Xresources
+exec i3
 ```
 
 // --- zprofile
