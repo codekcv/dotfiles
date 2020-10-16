@@ -1,6 +1,4 @@
-# dotfiles
-
-This is a personal guide for my own arch install for my reference only.
+﻿This is a personal guide for my own arch install for my reference only. Installation depends on your hardware and personal preferences.
 
 // ===[ Preparation ]=== //
 1. Download Arch ISO & Balena Etcher
@@ -12,11 +10,11 @@ This is a personal guide for my own arch install for my reference only.
 1.2 UEFI >ls /sys/firmware/efi/efivars
 1.3 disk >fdisk -l
 
-2. timedatectl set-ntp true
+2. >timedatectl set-ntp true
 
 5. Wipe
 5.1 gdisk /dev/sd*
-5.2 o -> n -> def, def, +512MB, ef00 -> n -> def def def -> w
+5.2 o -> n -> defx2, +512MB, ef00 -> n -> defx3 -> w
 
 6. Format
 6.1 mkfs.fat /dev/sd*1
@@ -28,7 +26,22 @@ This is a personal guide for my own arch install for my reference only.
 7.3 mount /dev/sd*1 /mnt/boot/efi
 
 // ===[ INIT PACKAGES ]=== //
-pacstrap /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager man amd-ucode xf86-video-amdgpu xorg xorg-xinit xorg-xrdb i3-gaps i3blocks rofi rxvt-unicode nano git udisks2 ntfs-3g p7zip zsh picom alsa-utils pulseaudio-alsa pavucontrol nitrogen neofetch vlc nautilus eog code qbittorrent gimp libreoffice-still
+pacstrap /mnt *
+
+// --- System Packages
+base base-devel linux linux-firmware grub efibootmgr networkmanager man amd-ucode xf86-video-amdgpu udisks2 ntfs-3g alsa-utils pulseaudio-alsa pavucontrol
+
+// --- Environment Packages
+xorg xorg-xinit xorg-xrdb alacritty i3-gaps polybar rofi picom nitrogen neofetch htop bspwm nautilus eog noto-fonts-emoji
+
+// --- Tool Packages
+nvim git zsh npm p7zip gnome-keyring libsecret
+
+// --- Normal Apps
+vlc qbittorrent gimp libreoffice-still obs-studio gedit discord handbrake kdenlive 
+
+// --- AUR
+tts-fs-fonts google-chrome visual-studio-code-bin neovim-nightly viber slack-desktop  escrotum-git 4kvideodownloader 4kyoutubetomp3 zoom
 
 // ===[ FSTAB ]=== //
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -45,15 +58,15 @@ ln -sf /usr/share/zoneinfo/Singapore /etc/localtime
 hwclock --systohc
 
 // ===[ Locale ]=== //
-1. >nano /etc/locale.gen
+1. >nvim /etc/locale.gen
 2. uncomment english example = en_US.UTF-8 UTF-8
 3. >locale-gen
-4. >nano /etc/locale.conf
+4. >nvim /etc/locale.conf
 5. Type "LANG=en_US.UTF-8
 
 // ===[ HOSTNAME ]=== //
-1. >nano /etc/hostname -> arch
-2. >nano /etc/hosts
+1. >nvim /etc/hostname -> arch
+2. >nvim /etc/hosts
 127.0.0.1 localhost
 ::1 localhost
 127.0.1.1 arch.localdomain arch
@@ -63,7 +76,7 @@ hwclock --systohc
 
 >useradd -m -G wheel [name]
 >passwd [name]
->nano /etc/sudoers -> uncomment wheel all
+>nvim /etc/sudoers -> uncomment wheel all
 
 >exit
 >umount -R /mnt
@@ -74,8 +87,6 @@ hwclock --systohc
 >sudo git clone https://aur.archlinux.org/yay-git.git
 >cd yay-git
 >makepkg -si
-
->yay
 >yay -S ttf-ms-fonts google-chrome slack-desktop escrotum-git zoom
 
 // ===[ XINITRC ]=== //
@@ -95,7 +106,7 @@ fi
 >sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 3. Plugins
->nano ~/.zshrc
+>nvim ~/.zshrc
 >ZSH_THEME="agnoster"
 >git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 >git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
