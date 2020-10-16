@@ -7,42 +7,42 @@ Installation depends on your hardware and personal preferences.
 
 // --- Installation
 1. check stuff<br/>
-1.1 internet > `ping -c3 google.com'`<br/>
-1.2 isUEFI? > `ls /sys/firmware/efi/efivars`<br/>
-1.3 disk > `fdisk -l`
+1.1 internet `> ping -c3 google.com'`<br/>
+1.2 isUEFI? `> ls /sys/firmware/efi/efivars`<br/>
+1.3 disk `> fdisk -l`
 
 2. update sys clock > `timedatectl set-ntp true`
 
-5. wipe drive and create partitions<br/>
-5.1 > `gdisk /dev/sd*`<br/>
-5.2 o -> n -> defx2, +512MB, ef00 -> n -> defx3 -> w
+3. wipe drive and create partitions<br/>
+3.1 `> gdisk /dev/sd*`<br/>
+3.2 o -> n -> defx2, +512MB, ef00 -> n -> defx3 -> w
 
-6. format partition
-6.1 mkfs.fat /dev/sd*1
-6.2 mkfs.ext4 /dev/sd*2
+4. format partition<br/>
+4.1 `> mkfs.fat /dev/sd*1`<br/>
+4.2 `> mkfs.ext4 /dev/sd*2`
 
-7. Mount<br/>
-7.1 mount /dev/sd*2 /mnt<br/>
-7.2 mkdir /mnt/boot/efi<br/>
-7.3 mount /dev/sd*1 /mnt/boot/efi
+5. Mount<br/>
+5.1 `> mount /dev/sd*2 /mnt`<br/>
+5.2 `> mkdir /mnt/boot/efi`<br/>
+5.3 `> mount /dev/sd*1 /mnt/boot/efi`
 
-// ===[ INIT PACKAGES ]=== //
-pacstrap /mnt *
+// --- Init Packages<br/>
+`> pacstrap /mnt *`
 
-// --- System Packages
-base base-devel linux linux-firmware grub efibootmgr networkmanager man amd-ucode xf86-video-amdgpu udisks2 ntfs-3g alsa-utils pulseaudio-alsa pavucontrol
+* System Packages
+> base base-devel linux linux-firmware grub efibootmgr networkmanager man amd-ucode xf86-video-amdgpu udisks2 ntfs-3g alsa-utils pulseaudio-alsa pavucontrol
 
-// --- Environment Packages
-xorg xorg-xinit xorg-xrdb alacritty i3-gaps polybar rofi picom nitrogen neofetch htop bspwm nautilus eog noto-fonts-emoji
+* Environment Packages
+> xorg xorg-xinit xorg-xrdb alacritty i3-gaps polybar rofi picom nitrogen neofetch htop bspwm nautilus eog noto-fonts-emoji
 
-// --- Tool Packages
-nvim git zsh npm p7zip gnome-keyring libsecret
+* Tool Packages
+> nvim git zsh npm p7zip gnome-keyring libsecret
 
-// --- Normal Apps
-vlc qbittorrent gimp libreoffice-still obs-studio gedit discord handbrake kdenlive 
+* Normal Apps
+> vlc qbittorrent gimp libreoffice-still obs-studio gedit discord handbrake kdenlive 
 
-// --- AUR
-tts-fs-fonts google-chrome visual-studio-code-bin neovim-nightly viber slack-desktop  escrotum-git 4kvideodownloader 4kyoutubetomp3 zoom
+* AUR
+> tts-fs-fonts google-chrome visual-studio-code-bin neovim-nightly viber slack-desktop  escrotum-git 4kvideodownloader 4kyoutubetomp3 zoom
 
 // ===[ FSTAB ]=== //
 genfstab -U /mnt >> /mnt/etc/fstab
