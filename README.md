@@ -128,4 +128,5 @@ fi
 4. theme [agnoster](https://github.com/agnoster/agnoster-zsh-theme)
 
 // ===[ MY DOT FILES ]=== //
+
 https://github.com/codekcv/dotfiles
