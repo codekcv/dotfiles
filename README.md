@@ -1,4 +1,4 @@
-This is a personal guide for my own arch install for my reference only.<br/>
+﻿This is a personal guide for my own arch install for my reference only.<br/>
 Installation depends on your hardware and personal preferences.<br/>
 You may use my dotfiles and configs if you want.
 
@@ -121,6 +121,8 @@ NOTE:
 
 // --- xinitrc
 ```
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 xrdb -merge ~/.Xresources
 exec i3
 ```
